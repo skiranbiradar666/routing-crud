@@ -10,7 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class PostService {
 
-  Base_Url : string = environment.Base_url
+  Base_Url : string = environment.Base_Url
 
   Post_Url : string = `${this.Base_Url}/posts.json`
 
