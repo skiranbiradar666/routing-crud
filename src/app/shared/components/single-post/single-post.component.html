@@ -1,0 +1,65 @@
+
+
+<!-- <div class="card" *ngIf="postobj">
+    <div class="card-header">
+        <h2 class="m-0">
+            {{postobj.title}}
+        </h2>
+    </div>
+    <div class="card-body">
+        <p class="m-0">
+            {{postobj.content}}
+        </p>
+    </div>
+    <div class="card-footer d-flex justify-content-between">
+        <button 
+        routerLink="edit"
+        mat-raised-button color="basic">Edit</button>
+        <button 
+        (click)="onRemove()"
+        mat-raised-button color="warn">Remove</button>
+    </div>
+</div> -->
+
+
+<div
+  class="card post-detail-card"
+  *ngIf="postobj"
+  tabindex="0">
+
+ 
+  <div class="card-header post-header">
+    <h2 class="m-0">{{ postobj.title }}</h2>
+  </div>
+
+  
+  <div class="card-body post-body">
+    <p>{{ postobj.content }}</p>
+  </div>
+
+ 
+  <div class="card-footer d-flex justify-content-between align-items-center">
+    <span class="post-meta">
+      Post with id : {{ postobj.id }}
+    </span>
+
+    <div class="action-buttons">
+      <button
+        mat-raised-button
+        color="basic"
+        matTooltip="Edit this post"
+        [routerLink]="['/posts', postobj.id, 'edit']">
+         Edit
+      </button>
+
+      <button
+        mat-raised-button
+        color="warn"
+        matTooltip="Delete this post"
+        (click)="onRemove()">
+         Remove
+      </button>
+    </div>
+  </div>
+</div>
+
